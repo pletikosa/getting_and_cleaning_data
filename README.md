@@ -14,7 +14,7 @@ This repository contains the following files:
 * [tidyData.txt](tidyData.txt) - a tidy dataset obtained after the transformation
 
 ## Data Transformation Process
-The process of data transformation was conducted by running the (run_analysis.R)[run_analysis.R] file. The process itself involves several steps:
+The process of data transformation was conducted by running the [run_analysis.R](run_analysis.R) file. The process itself involves several steps:
 
 0. **PREPROCESSING**
     * First the required libraries are loaded. In particular `dplyr` is used for data summarization conducted in the last step. 
