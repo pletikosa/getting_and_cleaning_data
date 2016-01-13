@@ -2,40 +2,19 @@ library(dplyr)
 
 ## 0. PREPROCESSING
 
-## check if the 'data' directory exists, otherwise create it
-if (!file.exists("activity")) {
-  dir.create("activity")}
-}
-
-## URL of the file containing the data
-fileUrl <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
-
-## create a local temporary file for storing the data file
-temp <- tempfile()
-
-## download the file (in binary format)
-download.file(fileUrl, temp, mode="wb")
-
-## unzip the file
-unzip(temp, exdir=".\\activity")
-
-## delete the temporary file from the system
-unlink(temp)
-
-
 ## read the data
 yLabels = c("activityid")
 subjectLabels = c("subjectid")
 
 ## Read the train data for facotrs(x), output(y), and subject
-xTrainData <- read.table(".\\activity\\UCI HAR Dataset\\train\\X_train.txt")
-yTrainData <- read.table(".\\activity\\UCI HAR Dataset\\train\\y_train.txt", col.names = yLabels)
-subjectTrainData <- read.table(".\\activity\\UCI HAR Dataset\\train\\subject_train.txt", col.names = subjectLabels)
+xTrainData <- read.table(".\\UCI HAR Dataset\\train\\X_train.txt")
+yTrainData <- read.table(".\\UCI HAR Dataset\\train\\y_train.txt", col.names = yLabels)
+subjectTrainData <- read.table(".\\UCI HAR Dataset\\train\\subject_train.txt", col.names = subjectLabels)
 
 ## Read the test data for facotrs(x), output(y), and subject
-xTestData <- read.table(".\\activity\\UCI HAR Dataset\\test\\X_test.txt")
-yTestData <- read.table(".\\activity\\UCI HAR Dataset\\test\\y_test.txt", col.names = yLabels)
-subjectTestData <- read.table(".\\activity\\UCI HAR Dataset\\test\\subject_test.txt", col.names = subjectLabels)
+xTestData <- read.table(".\\UCI HAR Dataset\\test\\X_test.txt")
+yTestData <- read.table(".\\UCI HAR Dataset\\test\\y_test.txt", col.names = yLabels)
+subjectTestData <- read.table(".\\UCI HAR Dataset\\test\\subject_test.txt", col.names = subjectLabels)
 
 
 ## 1. MERGING
@@ -53,7 +32,7 @@ data<- rbind(trainData, testData)
 ## 2. EXTRACTING OF MEAN AND STANDARD DEVIATION MEASUREMENTS
 
 ## read the names of features
-features <- read.table(".\\activity\\UCI HAR Dataset\\features.txt")
+features <- read.table(".\\UCI HAR Dataset\\features.txt")
 
 labels <- c(make.names(features$V2), subjectLabels, yLabels)
 names(data) <- labels
@@ -66,7 +45,7 @@ data <- data[,index]
 ## 3. ASSIGNING DESCRIPTIVE ACTIVITY NAMES
 
 ##  read the labels for activities
-activityLabels <- read.table(".\\activity\\UCI HAR Dataset\\activity_labels.txt", sep=" ", col.names=c("id", "activity"))
+activityLabels <- read.table(".\\UCI HAR Dataset\\activity_labels.txt", sep=" ", col.names=c("id", "activity"))
 
 ## merge the activity labels with the outcome variable 
 ## (to be able to transform it to a factor variable, with levels corresponding to activity labels) 
@@ -127,5 +106,5 @@ tidyData <-summarize_each(activitiesBySubject, funs(mean, "mean", mean(., na.rm 
 names(tidyData) <- c("activity", "subject", varNames[1:66])
 
 ## store the data in a local folder
-write.table(format(tidyData), ".\\activity\\tidyData.txt", row.names=FALSE, col.names=TRUE, quote=FALSE)
+write.table(format(tidyData), ".\\tidyData.txt", row.names=FALSE, col.names=TRUE, quote=FALSE)
 

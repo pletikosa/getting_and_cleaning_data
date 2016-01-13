@@ -18,8 +18,7 @@ The process of data transformation was conducted by running the [run_analysis.R]
 
 0. **PREPROCESSING**
     * First the required libraries are loaded. In particular `dplyr` is used for data summarization conducted in the last step. 
-    * Next, the [Human Activity Recognition Using Smartphones Data Set](https://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones) is downloaded from its original location and is uncompressed in a local directory named `activity`. 
-    * Finally, the data required for this task is loaded. For the purpose of this task, the following files included in the original dataset were of interest:
+    * Next, the data required for this task is loaded. For the purpose of this task, the following files included in the original dataset were of interest:
         * `UCI HAR Dataset\test\subject_test.txt` -> `subjectTestData`
         * `UCI HAR Dataset\test\X_test.txt` -> `xTestData`
         * `UCI HAR Dataset\test\y_test.txt` -> `yTestData`
@@ -57,7 +56,7 @@ In the final step, a copy of the `data` frame obtained in the previous step is c
     * Then these two factors are defined as grouping variables by applying the `group_by` function.
     * A new dataframe is created, by summarizing over `activity` and `subject` by calculating the average value of the measurements (i.e. `mean`).
     * The original variable names are applied to avoid the `_mean` extension assigned in the previous step.
-    * Finally, the data is stored under the name `tidyData.txt` in the `activity` directory.
+    * Finally, the data is stored under the name `tidyData.txt` in the working directory.
 
 ## The Resulting Tidy Dataset
 The actual datafile generated in the final step is stored in this repository as [tidyData.txt](tidyData.txt)
