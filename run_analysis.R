@@ -124,7 +124,7 @@ activitiesBySubject <- group_by(tidyData, activity, subjectid)
 tidyData <-summarize_each(activitiesBySubject, funs(mean, "mean", mean(., na.rm = TRUE)))
 
 ## reapply again the variable names (before the last transformation)
-names(tidyData) <- varNames
+names(tidyData) <- c("activity", "subject", varNames[1:66])
 
 ## store the data in a local folder
 write.table(format(tidyData), ".\\activity\\tidyData.txt", row.names=FALSE, col.names=TRUE, quote=FALSE)
