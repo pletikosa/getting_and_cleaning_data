@@ -9,9 +9,9 @@ This repository contains the files required for the course project of "Getting a
 This repository contains the following files:
 
 * README.md -- explains the files included in this repository (this file)
-* CodeBook.md -- a code book describing the resulting dataset and applied transformations
-* run_analysis.R -- an R script containing the code needed for data transformation
-* tidyData.txt - a tidy dataset obtained after the transformation
+* [CodeBook.md](CodeBook.md) -- a code book describing the resulting dataset and applied transformations
+* [run_analysis.R](run_analysis.R) -- an R script containing the code needed for data transformation
+* [tidyData.txt](tidyData.txt) - a tidy dataset obtained after the transformation
 
 ## Data Transformation Process
 The process of data transformation was conducted by running the (run_analysis.R) [run_analysis.R] file. The process itself involves several steps:
