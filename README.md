@@ -14,7 +14,7 @@ This repository contains the following files:
 * [tidyData.txt](tidyData.txt) - a tidy dataset obtained after the transformation
 
 ## Data Transformation Process
-The process of data transformation was conducted by running the (run_analysis.R) [run_analysis.R] file. The process itself involves several steps:
+The process of data transformation was conducted by running the (run_analysis.R)[run_analysis.R] file. The process itself involves several steps:
 
 0. **PREPROCESSING**
     * First the required libraries are loaded. In particular `dplyr` is used for data summarization conducted in the last step. 
@@ -62,4 +62,4 @@ In the final step, a copy of the `data` frame obtained in the previous step is c
 ## The Resulting Tidy Dataset
 The actual datafile generated in the final step is stored in this repository as [tidyData.txt](tidyData.txt)
 
-The file [codebook.md](codebook.md) provides a detailed description of all variables included in the resulting dataset, as well as the transformation performed over the original variable values.
+The file [CodeBook.md](CodeBook.md) provides a detailed description of all variables included in the resulting dataset, as well as the transformation performed over the original variable values.
