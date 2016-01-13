@@ -1,6 +1,4 @@
----
-output: html_document
----
+
 # Getting and Cleaning Data Course Project
 
 This repository contains the files required for the course project of "Getting and Cleaning Data". The goal of the project is to perform several transformations over the [Human Activity Recognition Using Smartphones Data Set](https://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones), available from the following URL:
